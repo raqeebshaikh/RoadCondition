@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- PAGE settings -->
+  <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+  <title>Prediction</title>
+  <meta name="description" content="Wireframe design of a landing page by Pingendo">
+  <meta name="keywords" content="Pingendo bootstrap example template wireframe landing">
+  <meta name="author" content="Pingendo">
+  <!-- CSS dependencies -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="../static/css/wireframe.css">
+      
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+        <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+
+
+
+  <style>
+
+
+    #map19e5e676839f447ca9a5828ec7ae0323 {
+      height:100%;
+    }
+    .map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+    .counter {
+    background-color:#f5f5f5;
+    padding: 5px 0;
+    border-radius: 5px;
+}
+
+.count-title {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.count-text {
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.fa-2x {
+    margin: 0 auto;
+    float: none;
+    display: table;
+    color: #4ad1e5;
+}
+
+  </style> 
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+
+</head>
+
+<body class="">
+
+  <div class="bg-success rounded rounded-left rounded-right rounded-top rounded-bottom py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"><a class="btn btn-primary m-2 w-50" href="{{ url_for('view')}}">Home</a></div>
+        <div class="col-md-7">
+          <h1 class="text-center" >Your Road Condition Report</h1>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js" style=""></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" style="">
+
+  
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 ">
+
+          
+            
+            <div class="container">
+
+               <div id="chart-container"></div>
+
+
+</div>
+
+ 
+
+          
+        </div>
+
+
+
+        <div class="col-md-6">
+          <div class="container">
+          <div id="map19e5e676839f447ca9a5828ec7ae0323" style="width:auto; height: 500px;  border-radius: 30px;"></div>
+        </div>
+        </div>
+      
+       </div> 
+     </div>
+  </div>
+
+
+    <div class="py-3">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12 ">
+
+          
+            
+            <div class="container">
+
+              
+
+<div class="row text-center">
+
+              <div class="col">
+               <div class="counter">
+      <i class="fa fa-coffee fa-2x"></i>
+      <h1 class="timer count-title count-number" data-to="{{values[0.0]}}" data-speed="1500"></h1>
+      <p class="count-text ">Bad Road</p>
+    </div>
+              </div>
+              <div class="col">
+                  <div class="counter">
+      <i class="fa fa-lightbulb-o fa-2x"></i>
+      <h1 class="timer count-title count-number" data-to="{{values[2.0]}}" data-speed="1500"></h1>
+      <p class="count-text ">Extremely Bad Road</p>
+    </div></div>
+
+         </div>
+</div>
+
+ 
+
+          
+        </div>
+
+
+
+
+      
+       </div> 
+     </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+
+
+
+
+
+
+        <script>
+            $(document).on('change', '.custom-file-input', function (event) {
+    $(this).next('.custom-file-label').html(event.target.files[0].name);
+})
+
+            
+        </script>
+
+
+<script text="text/javascript">
+var map = L.map('map19e5e676839f447ca9a5828ec7ae0323');
+L.tileLayer(
+  "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {maxZoom:19, attribution: '<a href="https://github.com/jwass/mplleaflet">mplleaflet</a> | Map data (c) <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'}).addTo(map);
+
+var gjData = JSON.parse({{ var|tojson }});
+// alert(typeof(gjData))
+if (gjData.features.length != 0) {
+  var gj = L.geoJson(gjData, {
+    style: function (feature) {
+      return feature.properties;
+    },
+    pointToLayer: function (feature, latlng) {
+      var icon = L.divIcon({'html': feature.properties.html, 
+        iconAnchor: [feature.properties.anchor_x, 
+                     feature.properties.anchor_y], 
+          className: 'empty'});  // What can I do about empty?
+      return L.marker(latlng, {icon: icon});
+    }
+  });
+  gj.addTo(map);
+  
+  map.fitBounds(gj.getBounds());
+} else {
+  map.setView([0, 0], 1);
+}
+</script>
+
+<script type="text/javascript">
+  
+  (function ($) {
+  $.fn.countTo = function (options) {
+    options = options || {};
+    
+    return $(this).each(function () {
+      // set options for current element
+      var settings = $.extend({}, $.fn.countTo.defaults, {
+        from:            $(this).data('from'),
+        to:              $(this).data('to'),
+        speed:           $(this).data('speed'),
+        refreshInterval: $(this).data('refresh-interval'),
+        decimals:        $(this).data('decimals')
+      }, options);
+      
+      // how many times to update the value, and how much to increment the value on each update
+      var loops = Math.ceil(settings.speed / settings.refreshInterval),
+        increment = (settings.to - settings.from) / loops;
+      
+      // references & variables that will change with each update
+      var self = this,
+        $self = $(this),
+        loopCount = 0,
+        value = settings.from,
+        data = $self.data('countTo') || {};
+      
+      $self.data('countTo', data);
+      
+      // if an existing interval can be found, clear it first
+      if (data.interval) {
+        clearInterval(data.interval);
+      }
+      data.interval = setInterval(updateTimer, settings.refreshInterval);
+      
+      // initialize the element with the starting value
+      render(value);
+      
+      function updateTimer() {
+        value += increment;
+        loopCount++;
+        
+        render(value);
+        
+        if (typeof(settings.onUpdate) == 'function') {
+          settings.onUpdate.call(self, value);
+        }
+        
+        if (loopCount >= loops) {
+          // remove the interval
+          $self.removeData('countTo');
+          clearInterval(data.interval);
+          value = settings.to;
+          
+          if (typeof(settings.onComplete) == 'function') {
+            settings.onComplete.call(self, value);
+          }
+        }
+      }
+      
+      function render(value) {
+        var formattedValue = settings.formatter.call(self, value, settings);
+        $self.html(formattedValue);
+      }
+    });
+  };
+  
+  $.fn.countTo.defaults = {
+    from: 0,               // the number the element should start at
+    to: 0,                 // the number the element should end at
+    speed: 1000,           // how long it should take to count between the target numbers
+    refreshInterval: 100,  // how often the element should be updated
+    decimals: 0,           // the number of decimal places to show
+    formatter: formatter,  // handler for formatting the value before rendering
+    onUpdate: null,        // callback method for every time the element is updated
+    onComplete: null       // callback method for when the element finishes updating
+  };
+  
+  function formatter(value, settings) {
+    return value.toFixed(settings.decimals);
+  }
+}(jQuery));
+
+jQuery(function ($) {
+  // custom formatting example
+  $('.count-number').data('countToOptions', {
+  formatter: function (value, options) {
+    return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+  }
+  });
+  
+  // start all the timers
+  $('.timer').each(count);  
+  
+  function count(options) {
+  var $this = $(this);
+  options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+  $this.countTo(options);
+  }
+});
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    var x = JSON.parse({{ piechart|tojson }});
+    // alert(x[1.0])
+    FusionCharts.ready(function(){
+      var chartObj = new FusionCharts({
+    type: 'doughnut2d',
+    renderAt: 'chart-container',
+    width: '100%',
+    height: '100%',
+    dataFormat: 'json',
+    dataSource: {
+        "chart": {
+          "paletteColors": "#508a4a,#0256a1,#f00000",
+            "caption": "Split of Road Condition",
+            // "subCaption": "Last year",
+            "numberPrefix": "$",
+            "bgColor": "#ffffff",
+            "startingAngle": "310",
+            "showLegend": "1",
+            "defaultCenterLabel": "Road Report",
+            "centerLabel": "Revenue from $label: $value",
+            "centerLabelBold": "1",
+            "showTooltip": "0",
+            "decimals": "0",
+            "theme": "fusion"
+        },
+        "data": x
+    }
+}
+);
+      chartObj.render();
+    });
+  </script>
+
+
+</body>
+
+</html>

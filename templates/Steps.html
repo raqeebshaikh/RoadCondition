@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Steps</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+</head>
+
+<body>
+  <div class="bg-success rounded rounded-left rounded-right rounded-top rounded-bottom py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"><a class="btn btn-primary m-2 w-50" href="{{ url_for('view')}}">Home</a></div>
+        <div class="col-md-7">
+          <h1 class="text-center" contenteditable="true">Steps to Generate Own Data</h1>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3" style="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6"><img class="img-fluid d-block mx-auto" src="../static/img/playstore.png" width="500" height="500"></div>
+        <div class="col-md-6">
+          <div class="px-md-5 d-flex flex-column align-items-start justify-content-center col-md-12 order-1 order-md-2 p-5">
+            <h1>1.Download Sensor Record</h1>
+            <p class="mb-3 lead" style="">Download the Sensor record from Play Store . <a href="https://play.google.com/store/apps/details?id=de.martingolpashin.sensor_record&amp;hl=en">Downlow Now</a><br></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="px-md-5 d-flex flex-column align-items-start justify-content-center col-md-12 order-1 order-md-2 p-5">
+            <h1>2.Settings</h1>
+            <p class="mb-3 lead w-100">Select GPS and Gyroscope and set the recording interval to 100 ms. Start Recording your data. To test on my website record data for up to 5 minutes. I have server limitation for processing or free server &nbsp;</p>
+          </div>
+        </div>
+        <div class="col-md-7"><img class="img-fluid d-block mx-auto" src="../static/img/sensor.png" width="500" height="500"></div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6"><img class="img-fluid d-block mx-auto" src="../static/img/upload.png" width="500" height="500"></div>
+        <div class="col-md-6">
+          <div class="px-md-5 d-flex flex-column align-items-start justify-content-center col-md-12 order-1 order-md-2 p-5">
+            <h1><b>3.</b>Upload and Make Prediction&nbsp;</h1>
+            <p class="mb-3 lead" style="">Two files will be generated GPS.csv and Gyroscope.csv. Upload these two files on the website to get the predictions.My model might predict some bad road condition at the start and stop of the journey its because of the motion while putting your mobile in the pocket.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Important Things To Note</h1>
+          <p class="mb-3 lead">1. The model might predict bad road conditions at the start and stop of the journey its because of motion of mobile while starting to record and putting in the pocket.&nbsp;<br>2. I've recorded my model while putting the mobile in Left pocket. So record in that manner itself<br>3. Various hyper parameters Tuning is required for improving accuracy which can be found you my GitHub. But to keep it simple i have  not shown those options on the website&nbsp;&nbsp;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+</body>
+
+</html>
