@@ -70,8 +70,8 @@ def view():
             flash('Please upload csv file')
             return redirect(url_for('index'))
 
-        gps = pd.read_csv(gps)
-        gyro = pd.read_csv(gyroscope)
+        gps = pd.read_csv(gps)[:2200]
+        gyro = pd.read_csv(gyroscope)[:2200]
 
         data = prepare_modelinput(timestep=10,gps=gps,gyroscope=gyro,model_path=str(os.path.join(os.getcwd(),'model.p')))
 
